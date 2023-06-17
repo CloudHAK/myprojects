@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title = "For Each Loop Example">
+        <lightning-layout multiple-rows="true" style="background-color: rgb(219, 246, 244);">
+            <template for:each={carlist} for:item="mycar">
+                <lightning-layout-item padding="around-medium" key={mycar.id} style="background-color: rgb(224, 19, 19);">
+                    <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">
+                        {mycar.name} <br/>
+                        {mycar.fuletype}
+                    </div>
+                </lightning-layout-item>
+            </template>
+        </lightning-layout>
+    </lightning-card>
+</template>

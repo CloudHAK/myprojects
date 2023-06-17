@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title={mytitle}>
+        <div class="slds-p-left_medium">
+        <template if:true={firstname}>
+            <b>
+                <h1>MY First Name Is : {myfirstName}</h1>
+            </b>
+        </template>
+        <template if:false={lastname}>
+            <b>
+                <h1>MY Last Name Is : {mylastName}</h1>
+            </b>
+        </template>
+        <br />
+        <lightning-button label="Show My First Name" variant="brand" onclick={showFname}></lightning-button>
+        <lightning-button label="Show My Last Name" variant="destructive" onclick={showlname}></lightning-button>
+    </div>
+    </lightning-card>
+</template>

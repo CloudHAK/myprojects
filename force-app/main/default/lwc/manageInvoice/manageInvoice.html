@@ -1,0 +1,34 @@
+<template>
+
+<div class="slds-align_absolute-center" style="height:2rem">New Invoice</div>
+    
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-1 slds-large-size_5-of-12">
+            <span>
+                <c-customlookuplwc icon-name="standard:account"
+                         s-object-api-name="contact"
+                         label="Customer"
+                         onlookupupdate={lookupRecord}
+                         placeholder="Search Customer here..."></c-customlookuplwc>
+            </span>
+        </div>
+        <div class="slds-p-left_small slds-col slds-size_1-of-1 slds-large-size_7-of-12">
+            <span class="slds-p-left_small">
+                <lightning-card  variant="Narrow"  title="Invoice Detail" icon-name="standard:account">
+                    <lightning-button slot="actions" 
+                                     variant="destructive" 
+                                     label="Save Draft Invoice" 
+                                     title="Destructive action" 
+                                     onclick={handleClick} 
+                                     class="slds-m-left_x-small">
+
+                    </lightning-button> 
+                    <div>
+                        Khumed Khatib
+                    </div>
+                </lightning-card>
+            </span>
+        </div>
+    </div>
+   
+</template>

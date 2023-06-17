@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Basic Calculator using LWC">
+
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_2-of-3">
+                <span><lightning-input type="integer" name="fnumber" label="Enter First Value" value={firstvalue}
+                        onchange={handelfirstNumber}>
+                    </lightning-input>
+                </span>
+                <span><lightning-input type="integer" name="fnumber" label="Enter Second Value" value={secondvalue}
+                        onchange={handelsecondNumber}>
+                    </lightning-input>
+                </span>
+
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <span>
+                    <h1>Result : {result}</h1>
+                </span>
+            </div>
+        </div> <br />
+        <div class="slds-p-left_medium">
+            <lightning-button-group>
+                <lightning-button label="Addition" variant="brand" onclick={handelAdd}></lightning-button>
+                <lightning-button label="Substraction" variant="destructive" onclick={handelSub}></lightning-button>
+                <lightning-button label="Multiplication" variant="brand" onclick={handelMul}></lightning-button>
+                <lightning-button label="Division" variant="destructive" onclick={handelDiv}></lightning-button>
+                <lightning-button label="Reset/Reload" variant="destructive" onclick={handelreset}></lightning-button>
+            </lightning-button-group>
+        </div>
+    </lightning-card>
+</template>

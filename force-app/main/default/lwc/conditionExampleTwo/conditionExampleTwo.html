@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title = "LWC If Else If Else Exaple">
+        <div class="slds-p-left_medium">
+            <template lwc:if = {leapYear}>
+                <p><b>YES!! It is a Leap Year</b></p>
+            </template>
+            <template lwc:elseif = {notLeapYear}>
+                <b><p>NO! Its Not a Leap year</p></b>
+            </template>
+            <template lwc:else>
+               <p><b>I dnt Know The Type Of year</b></p>
+            </template>
+        </div> <br/>
+    </lightning-card>
+</template>
