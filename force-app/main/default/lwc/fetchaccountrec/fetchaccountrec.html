@@ -1,0 +1,42 @@
+<template>
+    <lightning-card title="Example For Wire as a Property using Wire Decorator">
+        <template if:true= {myaccounts.data}>
+            <div class="c-container slds-m-horizontal_none">
+                <table class="slds-table slds-table_cell-buffer slds-no-row-hover slds-table_bordered">
+                    <thead>
+                        <tr>
+                            <th>SR No</th>
+                            <th>Account ID</th>
+                            <th>Account Name</th>
+                            <th>Account Rating</th>
+                            <th>Account Industry</th>
+                        </tr>
+                    </thead>
+                    <template for:each = {myaccounts.data} for:item="accrec" for:index= "index">
+                        <tbody key = {accrec.Id}>
+                            <tr>
+                                <td>{index}</td>
+                                <td>{accrec.Id}</td>
+                                <td>{accrec.Name}</td>
+                                <td>{accrec.Rating}</td>
+                                <td>{accrec.Industry}</td>
+                            </tr>
+                        </tbody>
+                    </template>
+                </table>
+                <template for:each = {myaccounts.data} for:item="accrec" for:index= "index">
+                    <lightning-layout key = {accrec.Id} horizontal-align="spread">
+                        <lightning-layout-item padding="around-small">
+                            <div class="custom-box">
+                            Account ID : {accrec.Id} <br/>
+                            Account Name : {accrec.Name} <br/>
+                            Account Rating : {accrec.Rating} <br/>
+                            Account Industry : {accrec.Industry} <br/>
+                        </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </template>
+            </div>
+        </template>
+    </lightning-card>
+</template>

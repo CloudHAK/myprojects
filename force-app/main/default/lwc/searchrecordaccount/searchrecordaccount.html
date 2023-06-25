@@ -1,0 +1,42 @@
+<template>
+    <lightning-card title="Search Account Record" icon-name="standard:account">
+
+        <div class="slds-grid slds-gutters slds-p-left_medium">
+            <div class="slds-col slds-size_2-of-3">
+                <span><lightning-input label="Search Account" 
+                                        placeholder="Enter Account Name To Search" 
+                                        type="Search"
+                                        value={searchText}
+                                        onchange={handalchnage}>
+
+                </lightning-input>
+            </span>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <span>
+                    <lightning-button label="Search Account" 
+                                      variant="Brand" 
+                                      onclick={fetchAccountRec}>
+
+                    </lightning-button>
+                </span>
+            </div>
+        </div> <br/>
+        <div>
+            <template for:each ={myaccountdata} for:item="mydata">
+                <lightning-layout key={mydata.Id}>
+                    <lightning-layout-item>
+                        <div class="slds-p-left_medium">
+                            ID : {mydata.Id} <br/>
+                            Name : {mydata.Name}<br/>
+                            Rating : {mydata.Rating} <br/>
+                            Industry : {mydata.Industry}<br/>
+                            ==================================
+                        </div> <br/>
+                        
+                    </lightning-layout-item>
+                </lightning-layout>
+            </template>
+        </div>
+    </lightning-card>
+</template>

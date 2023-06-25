@@ -1,0 +1,55 @@
+<template>
+    <lightning-card title = "Wire as a Function Using Apex">
+        <lightning-button label="Show LeadRecord" slot="actions" variant="brand" onclick= {handelshowlead}></lightning-button>
+        <template if:true ={showLeadRecord}>
+            <table class="slds-table slds-table_cell-buffer slds-no-row-hover slds-table_bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Rating</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <template for:each = {leadlist} for:item="mylead" for:index= "index">
+                    <tbody key = {mylead.Id}>
+                        <tr>
+                            <td>{mylead.Id}</td>
+                            <td>{mylead.FirstName}</td>
+                            <td>{mylead.LastName}</td>
+                            <td>{mylead.Rating}</td>
+                            <td>{mylead.Email}</td>
+                        </tr>
+                    </tbody>
+                </template>
+            </table>
+        </template>
+        <template if:true ={showLeadRecordbyButtonclick}>
+            <lightning-card title = "BY BUTTON CLICK">
+                <table class="slds-table slds-table_cell-buffer slds-no-row-hover slds-table_bordered">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Rating</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <template for:each = {leadlist} for:item="mylead" for:index= "index">
+                        <tbody key = {mylead.Id}>
+                            <tr>
+                                <td>{mylead.Id}</td>
+                                <td>{mylead.FirstName}</td>
+                                <td>{mylead.LastName}</td>
+                                <td>{mylead.Rating}</td>
+                                <td>{mylead.Email}</td>
+                            </tr>
+                        </tbody>
+                    </template>
+                </table>
+            </lightning-card>
+        </template>
+    </lightning-card>
+</template>

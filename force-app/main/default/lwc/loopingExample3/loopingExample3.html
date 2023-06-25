@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title = "List of It Company">
+        <lightning-layout>
+            <template iterator:it={ITcompanies}>
+                <lightning-layout-item key={it.value.Id} flexibility="auto" padding="around-small">
+                    <div class="slds-box">
+                        {it.value.name}
+                    </div>
+                </lightning-layout-item>
+            </template>
+        </lightning-layout>
+    </lightning-card>
+</template>

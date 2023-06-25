@@ -1,0 +1,100 @@
+<template>
+    <lightning-card title="Bank Details" icon-name="standard:household">
+        <div class="slds-box slds-m-around_x-small custom-bg">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_2-of-3">
+                    <span>
+                        <lightning-input label="IFSC Code" placeholder="Insert IFSC Code" variant="label-hidden"
+                            value={ifsccode} onchange={handalifsc}>
+                        </lightning-input>
+                    </span>
+                </div>
+                <div class="slds-col slds-size_1-of-3">
+                    <span>
+                        <lightning-button-group>
+                            <lightning-button label="Search Bank Details" 
+                                          variant="destructive"
+                                          disabled={isButtonDisabled} 
+                                          onclick={handalAPicall}>
+                        </lightning-button> &nbsp;
+                        </lightning-button-group>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" variant="brand" size="large">
+            </lightning-spinner>
+       </template>
+        <template if:true={ifscrecivedData}>
+            <div class="slds-box slds-m-around_x-small" style="background:#16325c">
+                    <div class="slds-grid slds-gutters slds-p-left_small">
+                        <div class="slds-col">
+                            <span>
+                                <div class="slds-text-color_inverse">BANK : <b>{ifscrecivedData.BANK}</b></div>
+                            </span>
+                            <span>
+                                <div class="slds-text-color_inverse">BRANCH : <b>{ifscrecivedData.BRANCH}</b></div>
+                            </span>
+                            <span>
+                                <div class="slds-text-color_inverse">CENTRE : <b>{ifscrecivedData.CENTRE}</b></div>
+                            </span>
+                            <span>
+                                <div class="slds-text-color_inverse">ADDRESS : <b>{ifscrecivedData.ADDRESS}</b></div>
+                            </span>
+                            <span>
+                                <div class="slds-text-color_inverse">CITY : <b>{ifscrecivedData.CITY}</b></div>
+                            </span>
+                            <span>
+                                <div class="slds-text-color_inverse">DISTRICT : <b>{ifscrecivedData.DISTRICT}</b></div>
+                            </span>
+                            <span>
+                                <div class="slds-text-color_inverse">STATE : <b>{ifscrecivedData.STATE}</b></div>
+                            </span>
+                            <span>
+                                <div class="slds-text-color_inverse">IMPS : <b>{ifscrecivedData.IMPS}</b></div>
+                            </span>
+                            <span>
+                                <div class="slds-text-color_inverse">UPI : <b>{ifscrecivedData.UPI}</b></div>
+                            </span>
+                        </div>
+                        <div class="slds-col">
+                            <span>
+                                <div class="slds-text-color_inverse">CONTACT : <b>{ifscrecivedData.CONTACT}</b></div>
+                            </span>
+                            <span>
+                                <div class="slds-text-color_inverse">MICR : <b>{ifscrecivedData.MICR}</b></div>
+                            </span>
+                            <span>
+                                <div class="slds-text-color_inverse">RTGS : <b>{ifscrecivedData.RTGS}</b></div>
+                            </span>
+                            <span>
+                                <div class="slds-text-color_inverse">NEFT : <b>{ifscrecivedData.NEFT}</b></div>
+                            </span>
+                            <span>
+                                <div class="slds-text-color_inverse">SWIFT : <b>{ifscrecivedData.SWIFT}</b></div>
+                            </span>
+                            <span>
+                                <div class="slds-text-color_inverse">ISO3166 : <b>{ifscrecivedData.ISO3166}</b></div>
+                            </span>
+                            <span>
+                                <div class="slds-text-color_inverse">BANKCODE : <b>{ifscrecivedData.BANKCODE}</b></div>
+                            </span>
+                            <span>
+                                <div class="slds-text-color_inverse">IFSC : <b>{ifscrecivedData.IFSC}</b></div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="slds-align_absolute-center">
+                        <lightning-button label="Reset" 
+                            variant="destructive"
+                            onclick={handalRESETCall}>
+                        </lightning-button>
+                    </div>
+            </div>
+        </template>
+        <template if:true={error}>
+            <p>Error: {error}</p>
+        </template>
+    </lightning-card>
+</template>
